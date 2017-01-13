@@ -5,6 +5,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/astrotomic/notifynder-sender-nexmo.svg?style=flat-square)](https://github.com/astrotomic/notifynder-sender-nexmo/issues)
 [![Total Downloads](https://img.shields.io/packagist/dt/astrotomic/notifynder-sender-nexmo.svg?style=flat-square)](https://packagist.org/packages/astrotomic/notifynder-sender-nexmo)
 
+[![Travis branch](https://img.shields.io/travis/Astrotomic/notifynder-sender-nexmo/master.svg?style=flat-square)](https://travis-ci.org/Astrotomic/notifynder-sender-nexmo/branches)
 [![StyleCI](https://styleci.io/repos/78859194/shield)](https://styleci.io/repos/78859194)
 
 [![Code Climate](https://img.shields.io/codeclimate/github/Astrotomic/notifynder-sender-nexmo.svg?style=flat-square)](https://codeclimate.com/github/Astrotomic/notifynder-sender-nexmo)
