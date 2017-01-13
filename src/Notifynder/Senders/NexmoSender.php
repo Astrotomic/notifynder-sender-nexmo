@@ -34,7 +34,7 @@ class NexmoSender implements SenderContract
         $client = new Client(new CredentialsBasic($key, $secret));
         foreach ($this->notifications as $notification) {
             $sms = call_user_func($callback, new SmsMessage(), $notification);
-            $client->messages()->send([
+            $client->message()->send([
                 'from' => $sms->getOriginator(),
                 'to' => $sms->getRecipient(),
                 'text' => $sms->getBody(),

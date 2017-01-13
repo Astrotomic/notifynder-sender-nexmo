@@ -44,12 +44,12 @@ Add the following array to `config/notifynder.php`
     'nexmo' => [
         'key' => '',
         'secret' => '',
-        'callback' => function(\Astrotomic\Notifynder\Senders\Messages\SmsMessage $message, \Fenos\Notifynder\Models\Notification $notification) {
+        'callback' => function(\Astrotomic\Notifynder\Senders\Messages\SmsMessage $message, \Fenos\Notifynder\Builder\Notification $notification) {
             return $message
                 ->from(...)
                 ->to(...)
-                ->body($notification->getText());
-        }
+                ->text($notification->getText());
+        },
         'store' => false, // wether you want to also store the notifications in database
     ],
 ],
