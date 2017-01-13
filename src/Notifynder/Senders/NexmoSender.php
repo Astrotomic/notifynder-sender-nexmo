@@ -2,10 +2,10 @@
 
 namespace Astrotomic\Notifynder\Senders;
 
+use Nexmo\Client;
 use Fenos\Notifynder\Contracts\SenderContract;
 use Fenos\Notifynder\Contracts\SenderManagerContract;
 use Astrotomic\Notifynder\Senders\Messages\SmsMessage;
-use Nexmo\Client;
 use Nexmo\Client\Credentials\Basic as CredentialsBasic;
 
 class NexmoSender implements SenderContract
