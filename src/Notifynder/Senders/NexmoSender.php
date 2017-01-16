@@ -7,13 +7,21 @@ use Fenos\Notifynder\Contracts\SenderContract;
 use Fenos\Notifynder\Contracts\SenderManagerContract;
 use Astrotomic\Notifynder\Senders\Messages\SmsMessage;
 use Nexmo\Client\Credentials\Basic as CredentialsBasic;
+use Fenos\Notifynder\Traits\SenderCallback;
 
 class NexmoSender implements SenderContract
 {
+    use SenderCallback;
+
     /**
      * @var array
      */
     protected $notifications;
+
+    /**
+     * @var array
+     */
+    protected $config;
 
     /**
      * NexmoSender constructor.
@@ -23,14 +31,15 @@ class NexmoSender implements SenderContract
     public function __construct(array $notifications)
     {
         $this->notifications = $notifications;
+        $this->config = notifynder_config('senders.nexmo');
     }
 
     public function send(SenderManagerContract $sender)
     {
-        $key = config('notifynder.senders.nexmo.key');
-        $secret = config('notifynder.senders.nexmo.secret');
-        $store = config('notifynder.senders.nexmo.store', false);
-        $callback = config('notifynder.senders.nexmo.callback');
+        $key = $this->config['key'];
+        $secret = $this->config['secret'];
+        $store = $this->config['store'];
+        $callback = $this->getCallback();
         $client = new Client(new CredentialsBasic($key, $secret));
         foreach ($this->notifications as $notification) {
             $sms = call_user_func($callback, new SmsMessage(), $notification);
