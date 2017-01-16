@@ -3,11 +3,11 @@
 namespace Astrotomic\Notifynder\Senders;
 
 use Nexmo\Client;
+use Fenos\Notifynder\Traits\SenderCallback;
 use Fenos\Notifynder\Contracts\SenderContract;
 use Fenos\Notifynder\Contracts\SenderManagerContract;
 use Astrotomic\Notifynder\Senders\Messages\SmsMessage;
 use Nexmo\Client\Credentials\Basic as CredentialsBasic;
-use Fenos\Notifynder\Traits\SenderCallback;
 
 class NexmoSender implements SenderContract
 {
