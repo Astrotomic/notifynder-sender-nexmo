@@ -1,12 +1,12 @@
 <?php
 
+use Fenos\Notifynder\Builder\Notification;
+use Astrotomic\Notifynder\Senders\NexmoSender;
 use Fenos\Notifynder\NotifynderServiceProvider;
+use Astrotomic\Notifynder\Senders\Messages\SmsMessage;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 use Fenos\Notifynder\Facades\Notifynder as NotifynderFacade;
 use Astrotomic\Notifynder\NotifynderSenderNexmoServiceProvider;
-use Astrotomic\Notifynder\Senders\NexmoSender;
-use Astrotomic\Notifynder\Senders\Messages\SmsMessage;
-use Fenos\Notifynder\Builder\Notification;
 
 abstract class NotifynderNexmoTestCase extends OrchestraTestCase
 {
